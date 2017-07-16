@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291353236F8819DC95B23057 /* Pods_SongsWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37170102AE4A2C7519C03A2E /* Pods_SongsWithFirebase.framework */; };
+		84AB35021E98544000A85A0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35011E98544000A85A0E /* LoginViewController.swift */; };
+		84AB35041E98545A00A85A0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35031E98545A00A85A0E /* SignUpViewController.swift */; };
+		84AB35061E98546F00A85A0E /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35051E98546F00A85A0E /* ResetViewController.swift */; };
+		84AB35111E986B4100A85A0E /* rollingInTheDeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB35081E986B4000A85A0E /* rollingInTheDeep.mp3 */; };
+		84AB35121E986B4100A85A0E /* Hello.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB35091E986B4100A85A0E /* Hello.mp3 */; };
+		84AB35131E986B4100A85A0E /* Skyfall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB350A1E986B4100A85A0E /* Skyfall.mp3 */; };
+		84AB35141E986B4100A85A0E /* RumorHasIt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB350B1E986B4100A85A0E /* RumorHasIt.mp3 */; };
+		84AB35151E986B4100A85A0E /* TurningTables.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB350C1E986B4100A85A0E /* TurningTables.mp3 */; };
+		84AB35161E986B4100A85A0E /* SetFireToTheRain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB350D1E986B4100A85A0E /* SetFireToTheRain.mp3 */; };
+		84AB35171E986B4100A85A0E /* RiverLea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB350E1E986B4100A85A0E /* RiverLea.mp3 */; };
+		84AB35181E986B4100A85A0E /* MillionYearsAgo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB350F1E986B4100A85A0E /* MillionYearsAgo.mp3 */; };
+		84AB35191E986B4100A85A0E /* WaterAndAFlame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB35101E986B4100A85A0E /* WaterAndAFlame.mp3 */; };
 		84EFCE4C1E984640001E3E3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFCE4B1E984640001E3E3B /* AppDelegate.swift */; };
-		84EFCE4E1E984640001E3E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFCE4D1E984640001E3E3B /* ViewController.swift */; };
+		84EFCE4E1E984640001E3E3B /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFCE4D1E984640001E3E3B /* MusicViewController.swift */; };
 		84EFCE511E984640001E3E3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE4F1E984640001E3E3B /* Main.storyboard */; };
 		84EFCE531E984640001E3E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE521E984640001E3E3B /* Assets.xcassets */; };
 		84EFCE561E984640001E3E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE541E984640001E3E3B /* LaunchScreen.storyboard */; };
+		84EFCE5E1E984BC1001E3E3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE5D1E984BC1001E3E3B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37170102AE4A2C7519C03A2E /* Pods_SongsWithFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongsWithFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ADAE64E4437BD474182C617 /* Pods-SongsWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsWithFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SongsWithFirebase/Pods-SongsWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
+		84AB35011E98544000A85A0E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84AB35031E98545A00A85A0E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		84AB35051E98546F00A85A0E /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
+		84AB35081E986B4000A85A0E /* rollingInTheDeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rollingInTheDeep.mp3; sourceTree = "<group>"; };
+		84AB35091E986B4100A85A0E /* Hello.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hello.mp3; sourceTree = "<group>"; };
+		84AB350A1E986B4100A85A0E /* Skyfall.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Skyfall.mp3; sourceTree = "<group>"; };
+		84AB350B1E986B4100A85A0E /* RumorHasIt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RumorHasIt.mp3; sourceTree = "<group>"; };
+		84AB350C1E986B4100A85A0E /* TurningTables.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TurningTables.mp3; sourceTree = "<group>"; };
+		84AB350D1E986B4100A85A0E /* SetFireToTheRain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SetFireToTheRain.mp3; sourceTree = "<group>"; };
+		84AB350E1E986B4100A85A0E /* RiverLea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RiverLea.mp3; sourceTree = "<group>"; };
+		84AB350F1E986B4100A85A0E /* MillionYearsAgo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MillionYearsAgo.mp3; sourceTree = "<group>"; };
+		84AB35101E986B4100A85A0E /* WaterAndAFlame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WaterAndAFlame.mp3; sourceTree = "<group>"; };
 		84EFCE481E984640001E3E3B /* SongsWithFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongsWithFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EFCE4B1E984640001E3E3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84EFCE4D1E984640001E3E3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84EFCE4D1E984640001E3E3B /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		84EFCE501E984640001E3E3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84EFCE521E984640001E3E3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84EFCE551E984640001E3E3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EFCE571E984640001E3E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84EFCE5D1E984BC1001E3E3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ADFB8B88598C64E60F814DE5 /* Pods-SongsWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsWithFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SongsWithFirebase/Pods-SongsWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				291353236F8819DC95B23057 /* Pods_SongsWithFirebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16196AAFD8635C1B4475CD34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37170102AE4A2C7519C03A2E /* Pods_SongsWithFirebase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84035F671F1B8D4A00447B57 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84AB35011E98544000A85A0E /* LoginViewController.swift */,
+				84AB35031E98545A00A85A0E /* SignUpViewController.swift */,
+				84AB35051E98546F00A85A0E /* ResetViewController.swift */,
+				84EFCE4D1E984640001E3E3B /* MusicViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		84035F681F1B8D6200447B57 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				84EFCE521E984640001E3E3B /* Assets.xcassets */,
+				84EFCE541E984640001E3E3B /* LaunchScreen.storyboard */,
+				84EFCE571E984640001E3E3B /* Info.plist */,
+				84EFCE5D1E984BC1001E3E3B /* GoogleService-Info.plist */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		84AB35071E986B0500A85A0E /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				84AB35081E986B4000A85A0E /* rollingInTheDeep.mp3 */,
+				84AB35091E986B4100A85A0E /* Hello.mp3 */,
+				84AB350A1E986B4100A85A0E /* Skyfall.mp3 */,
+				84AB350B1E986B4100A85A0E /* RumorHasIt.mp3 */,
+				84AB350C1E986B4100A85A0E /* TurningTables.mp3 */,
+				84AB350D1E986B4100A85A0E /* SetFireToTheRain.mp3 */,
+				84AB350E1E986B4100A85A0E /* RiverLea.mp3 */,
+				84AB350F1E986B4100A85A0E /* MillionYearsAgo.mp3 */,
+				84AB35101E986B4100A85A0E /* WaterAndAFlame.mp3 */,
+			);
+			name = Songs;
+			sourceTree = "<group>";
+		};
 		84EFCE3F1E984640001E3E3B = {
 			isa = PBXGroup;
 			children = (
 				84EFCE4A1E984640001E3E3B /* SongsWithFirebase */,
 				84EFCE491E984640001E3E3B /* Products */,
+				8A5FE0E165FED37E13692577 /* Pods */,
+				16196AAFD8635C1B4475CD34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +133,22 @@
 		84EFCE4A1E984640001E3E3B /* SongsWithFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				84AB35071E986B0500A85A0E /* Songs */,
 				84EFCE4B1E984640001E3E3B /* AppDelegate.swift */,
-				84EFCE4D1E984640001E3E3B /* ViewController.swift */,
+				84035F671F1B8D4A00447B57 /* ViewControllers */,
 				84EFCE4F1E984640001E3E3B /* Main.storyboard */,
-				84EFCE521E984640001E3E3B /* Assets.xcassets */,
-				84EFCE541E984640001E3E3B /* LaunchScreen.storyboard */,
-				84EFCE571E984640001E3E3B /* Info.plist */,
+				84035F681F1B8D6200447B57 /* Support Files */,
 			);
 			path = SongsWithFirebase;
+			sourceTree = "<group>";
+		};
+		8A5FE0E165FED37E13692577 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB8B88598C64E60F814DE5 /* Pods-SongsWithFirebase.debug.xcconfig */,
+				7ADAE64E4437BD474182C617 /* Pods-SongsWithFirebase.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84EFCE5A1E984640001E3E3B /* Build configuration list for PBXNativeTarget "SongsWithFirebase" */;
 			buildPhases = (
+				E1A2013D7EB9C6E60FC142BA /* [CP] Check Pods Manifest.lock */,
 				84EFCE441E984640001E3E3B /* Sources */,
 				84EFCE451E984640001E3E3B /* Frameworks */,
 				84EFCE461E984640001E3E3B /* Resources */,
+				4B47BD28DA7CA0CB644F2164 /* [CP] Embed Pods Frameworks */,
+				301FFEFA8CD0F9A1730F920A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,20 +214,81 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AB35161E986B4100A85A0E /* SetFireToTheRain.mp3 in Resources */,
 				84EFCE561E984640001E3E3B /* LaunchScreen.storyboard in Resources */,
+				84AB35141E986B4100A85A0E /* RumorHasIt.mp3 in Resources */,
+				84AB35121E986B4100A85A0E /* Hello.mp3 in Resources */,
+				84AB35171E986B4100A85A0E /* RiverLea.mp3 in Resources */,
+				84EFCE5E1E984BC1001E3E3B /* GoogleService-Info.plist in Resources */,
+				84AB35131E986B4100A85A0E /* Skyfall.mp3 in Resources */,
+				84AB35151E986B4100A85A0E /* TurningTables.mp3 in Resources */,
 				84EFCE531E984640001E3E3B /* Assets.xcassets in Resources */,
 				84EFCE511E984640001E3E3B /* Main.storyboard in Resources */,
+				84AB35181E986B4100A85A0E /* MillionYearsAgo.mp3 in Resources */,
+				84AB35111E986B4100A85A0E /* rollingInTheDeep.mp3 in Resources */,
+				84AB35191E986B4100A85A0E /* WaterAndAFlame.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		301FFEFA8CD0F9A1730F920A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SongsWithFirebase/Pods-SongsWithFirebase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B47BD28DA7CA0CB644F2164 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SongsWithFirebase/Pods-SongsWithFirebase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1A2013D7EB9C6E60FC142BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84EFCE441E984640001E3E3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84EFCE4E1E984640001E3E3B /* ViewController.swift in Sources */,
+				84AB35061E98546F00A85A0E /* ResetViewController.swift in Sources */,
+				84EFCE4E1E984640001E3E3B /* MusicViewController.swift in Sources */,
+				84AB35041E98545A00A85A0E /* SignUpViewController.swift in Sources */,
+				84AB35021E98544000A85A0E /* LoginViewController.swift in Sources */,
 				84EFCE4C1E984640001E3E3B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +408,7 @@
 		};
 		84EFCE5B1E984640001E3E3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADFB8B88598C64E60F814DE5 /* Pods-SongsWithFirebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3TVP64ZUPA;
@@ -270,6 +422,7 @@
 		};
 		84EFCE5C1E984640001E3E3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ADAE64E4437BD474182C617 /* Pods-SongsWithFirebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3TVP64ZUPA;
@@ -300,6 +453,7 @@
 				84EFCE5C1E984640001E3E3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
