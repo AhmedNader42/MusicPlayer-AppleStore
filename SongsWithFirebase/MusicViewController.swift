@@ -28,7 +28,7 @@ class MusicViewController: UIViewController{
      *************************************************************/
     var player = AVAudioPlayer()
     var songIsChoosed = false
-    let songs = ["rollingInTheDeep","Hello","Skyfall","RumorHasit","TurningTables","SetFireToTheRain","RiverLea","MillionYearsAgo","WaterAndAFlame"]
+    let songs = ["rollingInTheDeep","Hello","Skyfall","RumorHasIt","TurningTables","SetFireToTheRain","RiverLea","MillionYearsAgo","WaterAndAFlame"]
     
 
     /*************************************************************

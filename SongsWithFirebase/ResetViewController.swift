@@ -19,6 +19,8 @@ class ResetViewController : UIViewController
      *                                                           *
      *************************************************************/
     @IBOutlet var emailTextField: UITextField!
+    @IBOutlet weak var spinner          : UIActivityIndicatorView!
+    @IBOutlet weak var resetButton      : UIButton!
     
     
     /*************************************************************
@@ -27,20 +29,48 @@ class ResetViewController : UIViewController
      *                                                           *
      *************************************************************/
     @IBAction func resetButton(_ sender: UIButton) {
-        if emailTextField.text == ""{
+        
+        spinner.startAnimating()
+        resetButton.isEnabled = false
+        resetButton.alpha = 0.5
+        
+        
+        if emailTextField.text == "" {
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.resetButton.isEnabled = true
+                self.resetButton.alpha = 1
+            }
+            
             showError(Title: "Reset Error", Message: "Please Enter the email!")
         }
         else{
             FIRAuth.auth()?.sendPasswordReset(withEmail: emailTextField.text!, completion: {
                 (error) in
+                
+                
                 var title = ""
                 var message = ""
                 
                 if error != nil{
+                    
+                    DispatchQueue.main.async {
+                        self.spinner.stopAnimating()
+                        self.resetButton.isEnabled = true
+                        self.resetButton.alpha = 1
+                    }
+                    
                     title = "Reset ERROR!"
                     message = (error?.localizedDescription)!
                 }
                 else{
+                    
+                    DispatchQueue.main.async {
+                        self.spinner.stopAnimating()
+                        self.resetButton.isEnabled = true
+                        self.resetButton.alpha = 1
+                    }
+                    
                     title = "Reset Success!"
                     message = "Password was reset successfully check your e-mail"
                     self.emailTextField.text = ""

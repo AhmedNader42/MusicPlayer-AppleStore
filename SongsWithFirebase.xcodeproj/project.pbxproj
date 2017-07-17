@@ -26,6 +26,13 @@
 		84EFCE531E984640001E3E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE521E984640001E3E3B /* Assets.xcassets */; };
 		84EFCE561E984640001E3E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE541E984640001E3E3B /* LaunchScreen.storyboard */; };
 		84EFCE5E1E984BC1001E3E3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE5D1E984BC1001E3E3B /* GoogleService-Info.plist */; };
+		84F59F131F1C0D0A0006AC31 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59F0C1F1C0D0A0006AC31 /* ImageViewExtension.swift */; };
+		84F59F141F1C0D0A0006AC31 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F59F0D1F1C0D0A0006AC31 /* LoadingCell.xib */; };
+		84F59F151F1C0D0A0006AC31 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F59F0E1F1C0D0A0006AC31 /* NothingFoundCell.xib */; };
+		84F59F161F1C0D0A0006AC31 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59F0F1F1C0D0A0006AC31 /* Result.swift */; };
+		84F59F171F1C0D0A0006AC31 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59F101F1C0D0A0006AC31 /* SearchResultCell.swift */; };
+		84F59F181F1C0D0A0006AC31 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F59F111F1C0D0A0006AC31 /* SearchResultCell.xib */; };
+		84F59F191F1C0D0A0006AC31 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59F121F1C0D0A0006AC31 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +58,13 @@
 		84EFCE551E984640001E3E3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EFCE571E984640001E3E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84EFCE5D1E984BC1001E3E3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84F59F0C1F1C0D0A0006AC31 /* ImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		84F59F0D1F1C0D0A0006AC31 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		84F59F0E1F1C0D0A0006AC31 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		84F59F0F1F1C0D0A0006AC31 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		84F59F101F1C0D0A0006AC31 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		84F59F111F1C0D0A0006AC31 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		84F59F121F1C0D0A0006AC31 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ADFB8B88598C64E60F814DE5 /* Pods-SongsWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsWithFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SongsWithFirebase/Pods-SongsWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +95,7 @@
 				84AB35031E98545A00A85A0E /* SignUpViewController.swift */,
 				84AB35051E98546F00A85A0E /* ResetViewController.swift */,
 				84EFCE4D1E984640001E3E3B /* MusicViewController.swift */,
+				84F59F121F1C0D0A0006AC31 /* SearchViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -133,13 +148,35 @@
 		84EFCE4A1E984640001E3E3B /* SongsWithFirebase */ = {
 			isa = PBXGroup;
 			children = (
-				84AB35071E986B0500A85A0E /* Songs */,
 				84EFCE4B1E984640001E3E3B /* AppDelegate.swift */,
-				84035F671F1B8D4A00447B57 /* ViewControllers */,
 				84EFCE4F1E984640001E3E3B /* Main.storyboard */,
+				84035F671F1B8D4A00447B57 /* ViewControllers */,
+				84F59F1A1F1C10F90006AC31 /* Model */,
+				84F59F1B1F1C11090006AC31 /* Nib */,
+				84AB35071E986B0500A85A0E /* Songs */,
 				84035F681F1B8D6200447B57 /* Support Files */,
 			);
 			path = SongsWithFirebase;
+			sourceTree = "<group>";
+		};
+		84F59F1A1F1C10F90006AC31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84F59F0F1F1C0D0A0006AC31 /* Result.swift */,
+				84F59F0C1F1C0D0A0006AC31 /* ImageViewExtension.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		84F59F1B1F1C11090006AC31 /* Nib */ = {
+			isa = PBXGroup;
+			children = (
+				84F59F111F1C0D0A0006AC31 /* SearchResultCell.xib */,
+				84F59F101F1C0D0A0006AC31 /* SearchResultCell.swift */,
+				84F59F0D1F1C0D0A0006AC31 /* LoadingCell.xib */,
+				84F59F0E1F1C0D0A0006AC31 /* NothingFoundCell.xib */,
+			);
+			name = Nib;
 			sourceTree = "<group>";
 		};
 		8A5FE0E165FED37E13692577 /* Pods */ = {
@@ -214,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F59F141F1C0D0A0006AC31 /* LoadingCell.xib in Resources */,
 				84AB35161E986B4100A85A0E /* SetFireToTheRain.mp3 in Resources */,
 				84EFCE561E984640001E3E3B /* LaunchScreen.storyboard in Resources */,
 				84AB35141E986B4100A85A0E /* RumorHasIt.mp3 in Resources */,
@@ -221,7 +259,9 @@
 				84AB35171E986B4100A85A0E /* RiverLea.mp3 in Resources */,
 				84EFCE5E1E984BC1001E3E3B /* GoogleService-Info.plist in Resources */,
 				84AB35131E986B4100A85A0E /* Skyfall.mp3 in Resources */,
+				84F59F151F1C0D0A0006AC31 /* NothingFoundCell.xib in Resources */,
 				84AB35151E986B4100A85A0E /* TurningTables.mp3 in Resources */,
+				84F59F181F1C0D0A0006AC31 /* SearchResultCell.xib in Resources */,
 				84EFCE531E984640001E3E3B /* Assets.xcassets in Resources */,
 				84EFCE511E984640001E3E3B /* Main.storyboard in Resources */,
 				84AB35181E986B4100A85A0E /* MillionYearsAgo.mp3 in Resources */,
@@ -288,7 +328,11 @@
 				84AB35061E98546F00A85A0E /* ResetViewController.swift in Sources */,
 				84EFCE4E1E984640001E3E3B /* MusicViewController.swift in Sources */,
 				84AB35041E98545A00A85A0E /* SignUpViewController.swift in Sources */,
+				84F59F191F1C0D0A0006AC31 /* SearchViewController.swift in Sources */,
 				84AB35021E98544000A85A0E /* LoginViewController.swift in Sources */,
+				84F59F161F1C0D0A0006AC31 /* Result.swift in Sources */,
+				84F59F131F1C0D0A0006AC31 /* ImageViewExtension.swift in Sources */,
+				84F59F171F1C0D0A0006AC31 /* SearchResultCell.swift in Sources */,
 				84EFCE4C1E984640001E3E3B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
