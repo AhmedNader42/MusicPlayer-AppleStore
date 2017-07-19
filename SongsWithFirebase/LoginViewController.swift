@@ -21,7 +21,19 @@ class LoginViewController: UIViewController
     @IBOutlet weak var emailTextField   : UITextField!
     @IBOutlet weak var spinner          : UIActivityIndicatorView!
     @IBOutlet weak var loginButton      : UIButton!
-  
+    
+
+    
+    /*************************************************************
+     *                                                           *
+     *                         Identifiers                       *
+     *                                                           *
+     *************************************************************/
+    struct identifiers {
+        static let mainView         = "MainView"
+        static let loginPersistence = "login"
+    }
+    
     /*************************************************************
      *                                                           *
      *                         IBAction                          *
@@ -32,6 +44,7 @@ class LoginViewController: UIViewController
         spinner.startAnimating()
         loginButton.isEnabled = false
         loginButton.alpha = 0.5
+        
         
         if emailTextField.text == "" || passwordTextField.text == ""{
             showError(Title: "LogIn Error", Message: "Please Enter the email and password")
@@ -45,14 +58,11 @@ class LoginViewController: UIViewController
             FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!){
                 (user,error) in
                 
-                
-                
-                
                 if error != nil{
                     
                     DispatchQueue.main.async {
                         self.spinner.stopAnimating()
-                    
+                        
                         self.loginButton.isEnabled = true
                         self.loginButton.alpha = 1
                     }
@@ -62,6 +72,11 @@ class LoginViewController: UIViewController
                 else{
                     print ("Sign in successful")
                     
+                    UserDefaults.standard.object(forKey: identifiers.loginPersistence)
+                    UserDefaults.standard.set(true, forKey: identifiers.loginPersistence)
+                    
+                    print("Changed : \(UserDefaults.standard.value(forKey: identifiers.loginPersistence))")
+                    
                     DispatchQueue.main.async {
                         self.spinner.stopAnimating()
                         self.loginButton.isEnabled = true
@@ -69,11 +84,14 @@ class LoginViewController: UIViewController
                     }
                     
                     
-                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView")
+                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: identifiers.mainView)
                     self.present(viewController!, animated: true, completion: nil)
                 }
             }
         }
+        
+        
+        
         
     }
     /*************************************************************
@@ -87,8 +105,22 @@ class LoginViewController: UIViewController
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-
-
+    
+    override func loadView() {
+        super.loadView()
+        
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
+    
+        
+        
+    
 }
 
 /*************************************************************

@@ -25,21 +25,22 @@ class SearchViewController: UIViewController {
      *                                                           *
      *************************************************************/
     var Results: [Result] = []
-    var didSearch = false
-    var isDownloading = false
-    var dataTask: URLSessionDataTask?
-    
+    var didSearch         = false
+    var isDownloading     = false
+    var dataTask          : URLSessionDataTask?
+    var cellUrl           = ""
     
     /*************************************************************
      *                                                           *
      *                        Identifiers                        *
      *                                                           *
      *************************************************************/
-    /// Nib identifiers
-    struct TableViewCellIdentifiers {
+    /// identifiers
+    struct identifiers {
         static let searchResultCell = "SearchResultCell"
         static let nothingFoundCell = "NothingFoundCell"
-        static let loadingCell = "LoadingCell"
+        static let loadingCell      = "LoadingCell"
+        static let webView          = "WebView"
     }
     
     /*************************************************************
@@ -55,14 +56,14 @@ class SearchViewController: UIViewController {
         tableView.rowHeight = 80
         
         //Register My custom Nibs
-        let searchResultNib = UINib(nibName: TableViewCellIdentifiers.searchResultCell ,bundle: nil)
-        tableView.register(searchResultNib, forCellReuseIdentifier: TableViewCellIdentifiers.searchResultCell )
+        let searchResultNib = UINib(nibName: identifiers.searchResultCell ,bundle: nil)
+        tableView.register(searchResultNib, forCellReuseIdentifier: identifiers.searchResultCell )
         
-        let nothingFoundNib = UINib(nibName: TableViewCellIdentifiers.nothingFoundCell, bundle: nil)
-        tableView.register(nothingFoundNib, forCellReuseIdentifier: TableViewCellIdentifiers.nothingFoundCell)
+        let nothingFoundNib = UINib(nibName: identifiers.nothingFoundCell, bundle: nil)
+        tableView.register(nothingFoundNib, forCellReuseIdentifier: identifiers.nothingFoundCell)
         
-        let loadingNib = UINib(nibName: TableViewCellIdentifiers.loadingCell, bundle: nil)
-        tableView.register(loadingNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
+        let loadingNib = UINib(nibName: identifiers.loadingCell, bundle: nil)
+        tableView.register(loadingNib, forCellReuseIdentifier: identifiers.loadingCell)
         
         searchBar.becomeFirstResponder()
     }
@@ -195,12 +196,13 @@ func parseDict(dictionary: [String:Any]) -> [Result] {
     }
     var searchResults: [Result] = []
     
-    // Loop over the
+    
     for resultsDict in array{
-        //3
+        
         var searchResult:Result?
+        
         if let resultsDict = resultsDict as? [String:Any]{
-            //4
+            
             if let wrapperType = resultsDict["wrapperType"] as? String{
                 switch wrapperType {
                 case "track":
@@ -286,37 +288,43 @@ func parseEbook(ebook dictionary: [String:Any]) -> Result{
  *    Extensions for the protocols of UITableView            *
  *                                                           *
  *************************************************************/
+
+
 extension SearchViewController: UITableViewDelegate{
     
     
-    
-    
+    //When selecting a cell search the web for the url
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if Results.count > 0 {
+            cellUrl = Results[indexPath.row].storeURL
+
+            let VC = self.storyboard?.instantiateViewController(withIdentifier: identifiers.webView) as! WebViewViewController
+            
+            VC.cellUrl = cellUrl
+            
+            self.present(VC, animated: true)
+        }
+        
+    }
 }
 
 extension SearchViewController: UITableViewDataSource{
-    //When selecting a cell deselect it
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    
-    
-    
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the loading cell
         if isDownloading {
             return 1
         }
-            // Return nothing (App just started)
+        // Return nothing (App just started)
         else if !didSearch {
             return 0
         }
-            // Return nothing found cell
+        // Return nothing found cell
         else if Results.count == 0 {
             return 1
         }
-            // Return the number of data in the array
+        // Return the number of data in the array
         else{
             return Results.count
         }
@@ -326,18 +334,18 @@ extension SearchViewController: UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Return the loading cell
         if isDownloading{
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.loadingCell,for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifiers.loadingCell,for: indexPath)
             let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
             spinner.startAnimating()
             return cell
         }
-            // Return the nothing found cell
+        // Return the nothing found cell
         else if Results.count == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.nothingFoundCell,for: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: identifiers.nothingFoundCell,for: indexPath)
         }
-            // Return the data in the array (Search Result Cell)
+        // Return the data in the array (Search Result Cell)
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifiers.searchResultCell, for: indexPath) as! SearchResultCell
             let Result = Results[indexPath.row]
             cell.configure(for: Result)
             return cell

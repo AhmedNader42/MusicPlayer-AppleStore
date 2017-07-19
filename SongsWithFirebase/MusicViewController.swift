@@ -28,9 +28,19 @@ class MusicViewController: UIViewController{
      *************************************************************/
     var player = AVAudioPlayer()
     var songIsChoosed = false
-    let songs = ["rollingInTheDeep","Hello","Skyfall","RumorHasIt","TurningTables","SetFireToTheRain","RiverLea","MillionYearsAgo","WaterAndAFlame"]
+    let songs = ["RollingInTheDeep","Hello","Skyfall","RumorHasIt","TurningTables","SetFireToTheRain","RiverLea","MillionYearsAgo","WaterAndAFlame"]
+    var isLoggedIn : Bool?
     
-
+    /*************************************************************
+     *                                                           *
+     *                       Identifiers                         *
+     *                                                           *
+     *************************************************************/
+    struct identifiers {
+        static let main                = "Main"
+        static let loginViewController = "Login"
+         static let loginPersistence   = "login"
+    }
     /*************************************************************
      *                                                           *
      *                        IBAction                           *
@@ -43,7 +53,11 @@ class MusicViewController: UIViewController{
                 if songIsChoosed {
                     player.stop()
                 }
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
+                
+                UserDefaults.standard.set(false, forKey: identifiers.loginPersistence)
+                print("Changed : \(UserDefaults.standard.value(forKey: identifiers.loginPersistence))")
+                
+                let viewController = UIStoryboard(name: identifiers.main , bundle: nil).instantiateViewController(withIdentifier: identifiers.loginViewController)
                 present(viewController, animated: true, completion: nil)
             }
             catch let error as NSError{
@@ -70,6 +84,20 @@ class MusicViewController: UIViewController{
             player.volume = sliderOutlet.value
         }
         
+    }
+    
+    override func viewDidLoad() {
+        if let logged = UserDefaults.standard.value(forKey: identifiers.loginPersistence) {
+            isLoggedIn = (logged as! Bool)
+        } else {
+            isLoggedIn = false
+        }
+        print("isLoggedIn : \(isLoggedIn)")
+        if !isLoggedIn! {
+            print("Should Go to the controller")
+            let viewController = self.storyboard?.instantiateViewController(withIdentifier: identifiers.loginViewController)
+            self.present(viewController!, animated: true, completion: nil)
+        }
     }
     
     

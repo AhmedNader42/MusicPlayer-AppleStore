@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MuK-tI-z9l">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -246,7 +246,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ISv-lQ-Ray" id="YFb-yl-gtL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -372,6 +372,25 @@
             </objects>
             <point key="canvasLocation" x="3738.75" y="915"/>
         </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="vtD-yl-liS">
+            <objects>
+                <viewController storyboardIdentifier="WebView" id="QZK-mB-78w" customClass="WebViewViewController" customModule="SongsWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O9r-dV-kTs"/>
+                        <viewControllerLayoutGuide type="bottom" id="BAq-UB-0ec"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jtm-za-RhX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vEe-mG-jXx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3e-0k-m4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4584" y="915"/>
+        </scene>
         <!--Reset View Controller-->
         <scene sceneID="3vP-Ca-0dX">
             <objects>
@@ -471,7 +490,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UDE-f1-Nwb">
             <objects>
-                <navigationController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="MuK-tI-z9l" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MuK-tI-z9l" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SEf-5z-xA0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -488,8 +507,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="H7t-Lt-ed5"/>
-        <segue reference="CrI-Md-8CH"/>
+        <segue reference="ylT-L8-dVU"/>
         <segue reference="K8i-eu-KQb"/>
+        <segue reference="n3M-Mx-ozy"/>
     </inferredMetricsTieBreakers>
 </document>

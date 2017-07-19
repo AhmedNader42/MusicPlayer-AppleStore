@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		291353236F8819DC95B23057 /* Pods_SongsWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37170102AE4A2C7519C03A2E /* Pods_SongsWithFirebase.framework */; };
+		840FD3C21F1D1D4E00C4A302 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FD3C11F1D1D4E00C4A302 /* WebViewViewController.swift */; };
 		84AB35021E98544000A85A0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35011E98544000A85A0E /* LoginViewController.swift */; };
 		84AB35041E98545A00A85A0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35031E98545A00A85A0E /* SignUpViewController.swift */; };
 		84AB35061E98546F00A85A0E /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35051E98546F00A85A0E /* ResetViewController.swift */; };
-		84AB35111E986B4100A85A0E /* rollingInTheDeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB35081E986B4000A85A0E /* rollingInTheDeep.mp3 */; };
+		84AB35111E986B4100A85A0E /* RollingInTheDeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB35081E986B4000A85A0E /* RollingInTheDeep.mp3 */; };
 		84AB35121E986B4100A85A0E /* Hello.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB35091E986B4100A85A0E /* Hello.mp3 */; };
 		84AB35131E986B4100A85A0E /* Skyfall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB350A1E986B4100A85A0E /* Skyfall.mp3 */; };
 		84AB35141E986B4100A85A0E /* RumorHasIt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84AB350B1E986B4100A85A0E /* RumorHasIt.mp3 */; };
@@ -38,10 +39,11 @@
 /* Begin PBXFileReference section */
 		37170102AE4A2C7519C03A2E /* Pods_SongsWithFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongsWithFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADAE64E4437BD474182C617 /* Pods-SongsWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsWithFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SongsWithFirebase/Pods-SongsWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
+		840FD3C11F1D1D4E00C4A302 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		84AB35011E98544000A85A0E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84AB35031E98545A00A85A0E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84AB35051E98546F00A85A0E /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
-		84AB35081E986B4000A85A0E /* rollingInTheDeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rollingInTheDeep.mp3; sourceTree = "<group>"; };
+		84AB35081E986B4000A85A0E /* RollingInTheDeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RollingInTheDeep.mp3; sourceTree = "<group>"; };
 		84AB35091E986B4100A85A0E /* Hello.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hello.mp3; sourceTree = "<group>"; };
 		84AB350A1E986B4100A85A0E /* Skyfall.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Skyfall.mp3; sourceTree = "<group>"; };
 		84AB350B1E986B4100A85A0E /* RumorHasIt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RumorHasIt.mp3; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				84AB35051E98546F00A85A0E /* ResetViewController.swift */,
 				84EFCE4D1E984640001E3E3B /* MusicViewController.swift */,
 				84F59F121F1C0D0A0006AC31 /* SearchViewController.swift */,
+				840FD3C11F1D1D4E00C4A302 /* WebViewViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -114,7 +117,7 @@
 		84AB35071E986B0500A85A0E /* Songs */ = {
 			isa = PBXGroup;
 			children = (
-				84AB35081E986B4000A85A0E /* rollingInTheDeep.mp3 */,
+				84AB35081E986B4000A85A0E /* RollingInTheDeep.mp3 */,
 				84AB35091E986B4100A85A0E /* Hello.mp3 */,
 				84AB350A1E986B4100A85A0E /* Skyfall.mp3 */,
 				84AB350B1E986B4100A85A0E /* RumorHasIt.mp3 */,
@@ -265,7 +268,7 @@
 				84EFCE531E984640001E3E3B /* Assets.xcassets in Resources */,
 				84EFCE511E984640001E3E3B /* Main.storyboard in Resources */,
 				84AB35181E986B4100A85A0E /* MillionYearsAgo.mp3 in Resources */,
-				84AB35111E986B4100A85A0E /* rollingInTheDeep.mp3 in Resources */,
+				84AB35111E986B4100A85A0E /* RollingInTheDeep.mp3 in Resources */,
 				84AB35191E986B4100A85A0E /* WaterAndAFlame.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840FD3C21F1D1D4E00C4A302 /* WebViewViewController.swift in Sources */,
 				84AB35061E98546F00A85A0E /* ResetViewController.swift in Sources */,
 				84EFCE4E1E984640001E3E3B /* MusicViewController.swift in Sources */,
 				84AB35041E98545A00A85A0E /* SignUpViewController.swift in Sources */,
