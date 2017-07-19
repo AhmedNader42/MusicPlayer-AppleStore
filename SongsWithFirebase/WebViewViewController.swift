@@ -13,51 +13,44 @@ class WebViewViewController: UIViewController, WKUIDelegate {
 
     
     
-    
+    /*************************************************************
+     *                                                           *
+     *                        Variables                          *
+     *                                                           *
+     *************************************************************/
     var webView : WKWebView!
-    
     var cellUrl = ""
     
     
-    
+    /*************************************************************
+     *                                                           *
+     *                        Activity Life Cycle                *
+     *                                                           *
+     *************************************************************/
     override func loadView() {
-        print("CellURL : \(cellUrl)")
+        
+        // Setup the webView
         let webConfiguration = WKWebViewConfiguration()
-        
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        
-        
+    
         webView.uiDelegate = self
-        
-        
-        
+
         self.view = webView
-        
-        print("View Loaded")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // Setup the url
         let url = URL(string: cellUrl)
-        let request = URLRequest(url: (url?.absoluteURL)!)
+        let request = URLRequest(url: url!)
         
-        print("URL : \((url?.absoluteURL)!)")
-        
-        
-        
+        // Load the request
         webView.load(request)
-//        if UIApplication.shared.canOpenURL(url!) {
-//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-//        } else {
-//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-//        }
-        
-        print("URL WebView : \(webView.url)")
         
         
-        print("isLoading : \(webView.isLoading)")
+        
+
         
         
     }

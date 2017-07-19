@@ -337,7 +337,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iwB-Jt-bn3">
-                                <rect key="frame" x="0.0" y="72" width="320" height="408"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="452"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="fAT-3B-dxo" id="3c7-Ya-ZfZ"/>
@@ -345,7 +345,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="QA0-ow-JgH">
-                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="fAT-3B-dxo" id="1x5-Kx-Yb6"/>
@@ -383,9 +383,32 @@
                     <view key="view" contentMode="scaleToFill" id="Jtm-za-RhX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUU-qz-BxS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="lud-dX-bsl">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="PJt-EE-zMb">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="38q-aj-sPl">
+                                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt; Back"/>
+                                            </button>
+                                            <connections>
+                                                <segue destination="fAT-3B-dxo" kind="show" identifier="ToSearchViewController" id="Bds-HF-j90"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lUU-qz-BxS" firstAttribute="top" secondItem="Jtm-za-RhX" secondAttribute="top" id="3IG-nA-tPu"/>
+                            <constraint firstAttribute="trailing" secondItem="lUU-qz-BxS" secondAttribute="trailing" id="FHu-BX-QBg"/>
+                            <constraint firstItem="lUU-qz-BxS" firstAttribute="leading" secondItem="Jtm-za-RhX" secondAttribute="leading" id="sUR-wT-y2q"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vEe-mG-jXx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3e-0k-m4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -510,5 +533,6 @@
         <segue reference="ylT-L8-dVU"/>
         <segue reference="K8i-eu-KQb"/>
         <segue reference="n3M-Mx-ozy"/>
+        <segue reference="Bds-HF-j90"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -89,10 +89,10 @@ class SearchViewController: UIViewController {
  *************************************************************/
 extension SearchViewController: UISearchBarDelegate{
     
-//    // Attach the search bar to the top of the screen (status bar)
-//    func position(for bar: UIBarPositioning) -> UIBarPosition {
-//        return .topAttached
-//    }
+    //    // Attach the search bar to the top of the screen (status bar)
+    //    func position(for bar: UIBarPositioning) -> UIBarPosition {
+    //        return .topAttached
+    //    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performSearch()
@@ -298,12 +298,18 @@ extension SearchViewController: UITableViewDelegate{
         
         if Results.count > 0 {
             cellUrl = Results[indexPath.row].storeURL
-
-            let VC = self.storyboard?.instantiateViewController(withIdentifier: identifiers.webView) as! WebViewViewController
             
-            VC.cellUrl = cellUrl
-            
-            self.present(VC, animated: true)
+            //            let VC = self.storyboard?.instantiateViewController(withIdentifier: identifiers.webView) as! WebViewViewController
+            //
+            //            VC.cellUrl = cellUrl
+            //
+            //            self.present(VC, animated: true)
+            let url = URL(string: cellUrl)
+            if UIApplication.shared.canOpenURL(url!) {
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            }
         }
         
     }
@@ -316,15 +322,15 @@ extension SearchViewController: UITableViewDataSource{
         if isDownloading {
             return 1
         }
-        // Return nothing (App just started)
+            // Return nothing (App just started)
         else if !didSearch {
             return 0
         }
-        // Return nothing found cell
+            // Return nothing found cell
         else if Results.count == 0 {
             return 1
         }
-        // Return the number of data in the array
+            // Return the number of data in the array
         else{
             return Results.count
         }
@@ -339,11 +345,11 @@ extension SearchViewController: UITableViewDataSource{
             spinner.startAnimating()
             return cell
         }
-        // Return the nothing found cell
+            // Return the nothing found cell
         else if Results.count == 0 {
             return tableView.dequeueReusableCell(withIdentifier: identifiers.nothingFoundCell,for: indexPath)
         }
-        // Return the data in the array (Search Result Cell)
+            // Return the data in the array (Search Result Cell)
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: identifiers.searchResultCell, for: indexPath) as! SearchResultCell
             let Result = Results[indexPath.row]
