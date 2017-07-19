@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4FZ-Sg-5gS">
+                            <activityIndicatorView opaque="NO" tag="42" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4FZ-Sg-5gS">
                                 <rect key="frame" x="97" y="22" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>

@@ -29,27 +29,35 @@ class SearchResultCell: UITableViewCell {
     
 
 
+    /*************************************************************
+     *                                                           *
+     *                        Configure method                   *
+     *                                                           *
+     *************************************************************/
+    /// Given a result sets the labels and images to the content of the data
+    ///
+    /// - Parameter searchResult: Data to display in the cell.
     func configure(for searchResult: Result){
+        // Set the name label.
         nameLabel.text = searchResult.name
         
+        // Make sure the artist name isn't empty or write unknown.
         if searchResult.artistName.isEmpty{
             artistNameLabel.text = "Unknown"
         } else {
+            // Display the kind next to the artist name
             artistNameLabel.text = String(format: "%@ (%@)", searchResult.artistName,kindForDisplay(searchResult.kind))
         }
         
-        //artworkImageView.image = UIImage(named: "Placeholder")
+        // Download the image with the given url.
         if let smallURL = URL(string: searchResult.artworkSmallURL) {
             downloadTask = artworkImageView.loadImage(url: smallURL)
         }
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        downloadTask?.cancel()
-        downloadTask = nil
-    }
-    
+    /// Reformats the kind taken to be more user friendly.
+    ///
+    /// - Parameter kind: The kind of the result.
+    /// - Returns: The kind displayed to the user.
     func kindForDisplay(_ kind: String ) -> String{
         switch kind {
         case "album": return "Album"
@@ -66,4 +74,20 @@ class SearchResultCell: UITableViewCell {
             return kind
         }
     }
+    
+    
+    /*************************************************************
+     *                                                           *
+     *                        Activity Life Cycle                *
+     *                                                           *
+     *************************************************************/
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        // When a cell is going to be reused cancel downloading the old image.
+        downloadTask?.cancel()
+        downloadTask = nil
+    }
+    
+    
 }

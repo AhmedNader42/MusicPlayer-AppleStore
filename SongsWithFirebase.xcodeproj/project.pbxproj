@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		291353236F8819DC95B23057 /* Pods_SongsWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37170102AE4A2C7519C03A2E /* Pods_SongsWithFirebase.framework */; };
-		840FD3C21F1D1D4E00C4A302 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FD3C11F1D1D4E00C4A302 /* WebViewViewController.swift */; };
 		84AB35021E98544000A85A0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35011E98544000A85A0E /* LoginViewController.swift */; };
 		84AB35041E98545A00A85A0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35031E98545A00A85A0E /* SignUpViewController.swift */; };
 		84AB35061E98546F00A85A0E /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB35051E98546F00A85A0E /* ResetViewController.swift */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		37170102AE4A2C7519C03A2E /* Pods_SongsWithFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongsWithFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADAE64E4437BD474182C617 /* Pods-SongsWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsWithFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SongsWithFirebase/Pods-SongsWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
-		840FD3C11F1D1D4E00C4A302 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		84AB35011E98544000A85A0E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84AB35031E98545A00A85A0E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84AB35051E98546F00A85A0E /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				84AB35051E98546F00A85A0E /* ResetViewController.swift */,
 				84EFCE4D1E984640001E3E3B /* MusicViewController.swift */,
 				84F59F121F1C0D0A0006AC31 /* SearchViewController.swift */,
-				840FD3C11F1D1D4E00C4A302 /* WebViewViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840FD3C21F1D1D4E00C4A302 /* WebViewViewController.swift in Sources */,
 				84AB35061E98546F00A85A0E /* ResetViewController.swift in Sources */,
 				84EFCE4E1E984640001E3E3B /* MusicViewController.swift in Sources */,
 				84AB35041E98545A00A85A0E /* SignUpViewController.swift in Sources */,

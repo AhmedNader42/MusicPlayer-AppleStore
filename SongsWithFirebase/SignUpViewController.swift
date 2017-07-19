@@ -24,50 +24,68 @@ class SignUpViewController: UIViewController
     
     /*************************************************************
      *                                                           *
+     *                         Identifiers                       *
+     *                                                           *
+     *************************************************************/
+    struct identifiers {
+        static let musicViewController = "MusicViewController"
+        static let loginPersistence    = "login"
+    }
+    
+    
+    
+    /*************************************************************
+     *                                                           *
      *                         IBAction                          *
      *                                                           *
      *************************************************************/
     @IBAction func signupButton(_ sender: UIButton) {
         
+        // Start animating the spinner and disable the button.
         spinner.startAnimating()
         signupButton.isEnabled = false
         signupButton.alpha = 0.5
         
-        
-        if emailTextField.text == "" {
-            
+        // Make sure the field is not empty
+        if !emailTextField.hasText {
+            // Stop the spinner and reenable the button.
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 self.signupButton.isEnabled = true
                 self.signupButton.alpha = 1
             }
-            
+            // Show an error popup.
             showError(Title: "SignUp Error!", Message: "Please Enter your email and password")
         }
         else{
+            // Authenticate the user with the given email and password.
             FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!){
                 (user,error) in
                 
                 if error != nil{
-                    
+                    // Stop the spinner and reenable the button
                     DispatchQueue.main.async {
                         self.spinner.stopAnimating()
                         self.signupButton.isEnabled = true
                         self.signupButton.alpha = 1
                     }
-                    
+                    // Show an error popup.
                     self.showError(Title: "SignUp Error", Message: (error?.localizedDescription)!)
                 }
                 else {
-                    print("Sign Up was successful")
+                    // Set the login status to true
+                    UserDefaults.standard.object(forKey: identifiers.loginPersistence)
+                    UserDefaults.standard.set(true, forKey: identifiers.loginPersistence)
                     
+                    // Stop the spinner and reenable the button.
                     DispatchQueue.main.async {
                         self.spinner.stopAnimating()
                         self.signupButton.isEnabled = true
                         self.signupButton.alpha = 1
                     }
                     
-                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView")
+                    // Go to the MusicViewController
+                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: identifiers.musicViewController)
                     self.present(viewController!,animated: true,completion: nil)
                     
                 }
@@ -80,6 +98,11 @@ class SignUpViewController: UIViewController
      *                         Error                             *
      *                                                           *
      *************************************************************/
+    /// Shows an error popup with a given message and title
+    ///
+    /// - Parameters:
+    ///   - title: The title displayed at the top
+    ///   - message: The message displayed withtin the body
     func showError(Title title: String , Message message:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)

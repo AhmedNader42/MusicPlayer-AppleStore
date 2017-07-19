@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MuK-tI-z9l">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -12,17 +12,17 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="SongsWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="SongsWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View" customClass="Logi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-cz-O8Y">
-                                <rect key="frame" x="10" y="166.5" width="300" height="147.5"/>
+                                <rect key="frame" x="37.5" y="260" width="300" height="147.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-ly-05H">
                                         <rect key="frame" x="116" y="0.0" width="68.5" height="33.5"/>
@@ -74,7 +74,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="g1w-jb-mrP">
-                                <rect key="frame" x="105.5" y="408" width="109" height="64"/>
+                                <rect key="frame" x="133" y="595" width="109" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-Xv-mT6">
                                         <rect key="frame" x="30.5" y="0.0" width="48" height="30"/>
@@ -125,11 +125,11 @@
                         <viewControllerLayoutGuide type="bottom" id="BO8-i2-gSp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mx1-Lb-d0o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qrx-9t-16d">
-                                <rect key="frame" x="10" y="166.5" width="300" height="147.5"/>
+                                <rect key="frame" x="37.5" y="260" width="300" height="147.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4B-Tw-Mu0">
                                         <rect key="frame" x="106.5" y="0.0" width="87" height="33.5"/>
@@ -184,7 +184,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="w4F-9H-n33">
-                                <rect key="frame" x="106" y="408" width="109" height="64"/>
+                                <rect key="frame" x="133" y="595" width="109" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxU-Rw-nTd">
                                         <rect key="frame" x="35.5" y="0.0" width="38" height="30"/>
@@ -235,18 +235,18 @@
                         <viewControllerLayoutGuide type="bottom" id="WaE-l1-GF5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="frV-DV-6Ut">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jFa-fG-voM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="303"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="ISv-lQ-Ray">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ISv-lQ-Ray" id="YFb-yl-gtL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -257,7 +257,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Gk6-TH-ea8">
-                                <rect key="frame" x="35" y="311" width="250" height="126"/>
+                                <rect key="frame" x="62.5" y="498" width="250" height="126"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dut-M0-kbm">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
@@ -269,16 +269,31 @@
                                             <action selector="playButton:" destination="nYI-xE-ozs" eventType="touchUpInside" id="MKX-Hl-enU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTg-5o-FpQ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-k5-KKf">
                                         <rect key="frame" x="0.0" y="43" width="250" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <state key="normal" title="Pause">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pauseButton:" destination="nYI-xE-ozs" eventType="touchUpInside" id="y9F-U2-Jjm"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTg-5o-FpQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <state key="normal" title="Pause">
+                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pauseButton:" destination="nYI-xE-ozs" eventType="touchUpInside" id="y9F-U2-Jjm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRc-XG-grI">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="40"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Next">
+                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="nextButton:" destination="nYI-xE-ozs" eventType="touchUpInside" id="xhI-Q0-RqX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IDY-2i-6pL">
                                         <rect key="frame" x="-2" y="86" width="254" height="41"/>
                                         <connections>
@@ -333,11 +348,11 @@
                         <viewControllerLayoutGuide type="bottom" id="uxf-eX-2X7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Y4l-Mj-Csa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iwB-Jt-bn3">
-                                <rect key="frame" x="0.0" y="28" width="320" height="452"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="fAT-3B-dxo" id="3c7-Ya-ZfZ"/>
@@ -345,7 +360,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="QA0-ow-JgH">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="fAT-3B-dxo" id="1x5-Kx-Yb6"/>
@@ -372,48 +387,6 @@
             </objects>
             <point key="canvasLocation" x="3738.75" y="915"/>
         </scene>
-        <!--Web View View Controller-->
-        <scene sceneID="vtD-yl-liS">
-            <objects>
-                <viewController storyboardIdentifier="WebView" id="QZK-mB-78w" customClass="WebViewViewController" customModule="SongsWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="O9r-dV-kTs"/>
-                        <viewControllerLayoutGuide type="bottom" id="BAq-UB-0ec"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Jtm-za-RhX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUU-qz-BxS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="lud-dX-bsl">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="PJt-EE-zMb">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="38q-aj-sPl">
-                                                <rect key="frame" x="16" y="7" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="&lt; Back"/>
-                                            </button>
-                                            <connections>
-                                                <segue destination="fAT-3B-dxo" kind="show" identifier="ToSearchViewController" id="Bds-HF-j90"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lUU-qz-BxS" firstAttribute="top" secondItem="Jtm-za-RhX" secondAttribute="top" id="3IG-nA-tPu"/>
-                            <constraint firstAttribute="trailing" secondItem="lUU-qz-BxS" secondAttribute="trailing" id="FHu-BX-QBg"/>
-                            <constraint firstItem="lUU-qz-BxS" firstAttribute="leading" secondItem="Jtm-za-RhX" secondAttribute="leading" id="sUR-wT-y2q"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d3e-0k-m4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4584" y="915"/>
-        </scene>
         <!--Reset View Controller-->
         <scene sceneID="3vP-Ca-0dX">
             <objects>
@@ -423,11 +396,11 @@
                         <viewControllerLayoutGuide type="bottom" id="GMT-Is-V9L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h7O-eH-b9i">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uYE-9b-rgX">
-                                <rect key="frame" x="10" y="184.5" width="300" height="112.5"/>
+                                <rect key="frame" x="37.5" y="277.5" width="300" height="112.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKC-q2-Tl0">
                                         <rect key="frame" x="51.5" y="0.0" width="197.5" height="33.5"/>
@@ -469,7 +442,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TlU-eG-wA2">
-                                <rect key="frame" x="136.5" y="408" width="48" height="64"/>
+                                <rect key="frame" x="163.5" y="595" width="48" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJv-Lh-GVl">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
@@ -513,7 +486,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UDE-f1-Nwb">
             <objects>
-                <navigationController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MuK-tI-z9l" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MusicViewController" automaticallyAdjustsScrollViewInsets="NO" id="MuK-tI-z9l" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SEf-5z-xA0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -533,6 +506,5 @@
         <segue reference="ylT-L8-dVU"/>
         <segue reference="K8i-eu-KQb"/>
         <segue reference="n3M-Mx-ozy"/>
-        <segue reference="Bds-HF-j90"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,8 +30,8 @@ class LoginViewController: UIViewController
      *                                                           *
      *************************************************************/
     struct identifiers {
-        static let mainView         = "MainView"
-        static let loginPersistence = "login"
+        static let musicViewController = "MusicViewController"
+        static let loginPersistence    = "login"
     }
     
     /*************************************************************
@@ -41,13 +41,15 @@ class LoginViewController: UIViewController
      *************************************************************/
     @IBAction func loginButton(_ sender: UIButton) {
         
+        // Start animating the spinner to indicate loading and disable the button.
         spinner.startAnimating()
         loginButton.isEnabled = false
         loginButton.alpha = 0.5
         
-        
-        if emailTextField.text == "" || passwordTextField.text == ""{
+        // Check the fields are not empty
+        if !emailTextField.hasText || !passwordTextField.hasText {
             showError(Title: "LogIn Error", Message: "Please Enter the email and password")
+            // Stop the spinner and reenable the button to try again.
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 self.loginButton.isEnabled = true
@@ -60,31 +62,30 @@ class LoginViewController: UIViewController
                 
                 if error != nil{
                     
+                    // Stop animating and reenable the button
                     DispatchQueue.main.async {
                         self.spinner.stopAnimating()
-                        
                         self.loginButton.isEnabled = true
                         self.loginButton.alpha = 1
                     }
                     
+                    // Show an error popup with the message
                     self.showError(Title: "SignIn Error", Message: (error?.localizedDescription)!)
                 }
                 else{
-                    print ("Sign in successful")
-                    
+                    // Set the login status to true
                     UserDefaults.standard.object(forKey: identifiers.loginPersistence)
                     UserDefaults.standard.set(true, forKey: identifiers.loginPersistence)
                     
-                    print("Changed : \(UserDefaults.standard.value(forKey: identifiers.loginPersistence))")
-                    
+                    // Stop the spinner and reenable the button.
                     DispatchQueue.main.async {
                         self.spinner.stopAnimating()
                         self.loginButton.isEnabled = true
                         self.loginButton.alpha = 1
                     }
                     
-                    
-                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: identifiers.mainView)
+                    // Go to the music player after a sucessful login.
+                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: identifiers.musicViewController)
                     self.present(viewController!, animated: true, completion: nil)
                 }
             }
@@ -99,28 +100,17 @@ class LoginViewController: UIViewController
      *                         Error                             *
      *                                                           *
      *************************************************************/
+    /// Shows an error popup with a given message and title
+    ///
+    /// - Parameters:
+    ///   - title: The title displayed at the top
+    ///   - message: The message displayed withtin the body
     func showError(Title title: String , Message message:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-    
-    override func loadView() {
-        super.loadView()
-        
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-    }
-    
-        
-        
-    
 }
 
 /*************************************************************
@@ -128,7 +118,7 @@ class LoginViewController: UIViewController
  *                         Keyboard                          *
  *                                                           *
  *************************************************************/
-extension LoginViewController{
+extension LoginViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

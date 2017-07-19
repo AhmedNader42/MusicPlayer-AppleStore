@@ -19,19 +19,16 @@ class MusicViewController: UIViewController {
      *                       Outlets                             *
      *                                                           *
      *************************************************************/
-    @IBOutlet var sliderOutlet: UISlider!
-    
+    @IBOutlet weak var sliderOutlet: UISlider!
     
     /*************************************************************
      *                                                           *
      *                       Variables                           *
      *                                                           *
      *************************************************************/
-    var player = AVAudioPlayer()
     var musicPlayer = AVQueuePlayer()
     var songIsChoosed = false
     let songs = ["RollingInTheDeep","Hello","Skyfall","RumorHasIt","TurningTables","SetFireToTheRain","RiverLea","MillionYearsAgo","WaterAndAFlame"]
-    var currentlyPlaying = 0
     var isLoggedIn : Bool?
     
     /*************************************************************
@@ -40,9 +37,9 @@ class MusicViewController: UIViewController {
      *                                                           *
      *************************************************************/
     struct identifiers {
-        static let main                = "Main"
-        static let loginViewController = "Login"
-        static let loginPersistence   = "login"
+        static let loginViewController = "LoginViewController"
+        static let loginPersistence    = "login"
+        static let cell                = "Cell"
     }
     
     /*************************************************************
@@ -51,43 +48,62 @@ class MusicViewController: UIViewController {
      *                                                           *
      *************************************************************/
     @IBAction func logoutButton(_ sender: UIBarButtonItem) {
+        // Make sure current user exists.
         if FIRAuth.auth()?.currentUser != nil{
             do{
+                // Logout the user.
                 try FIRAuth.auth()?.signOut()
+                // Stop the music before logout.
                 if songIsChoosed {
-                    player.stop()
+                    musicPlayer.pause()
                 }
                 
-                // Set The value of the persistent login to false
+                // Set The value of the persistent login to false.
                 UserDefaults.standard.set(false, forKey: identifiers.loginPersistence)
                 
-                // Go to the login view Controller
-                let viewController = UIStoryboard(name: identifiers.main , bundle: nil).instantiateViewController(withIdentifier: identifiers.loginViewController)
-                present(viewController, animated: true, completion: nil)
+                // Go to the login view Controller.
+                let viewController = self.storyboard?.instantiateViewController(withIdentifier: identifiers.loginViewController)
+                present(viewController!, animated: true, completion: nil)
             }
             catch let error as NSError{
                 print(error.localizedDescription)
             }
         }
     }
-    // Play Music button
+    // Play Music button.
     @IBAction func playButton(_ sender: UIButton) {
         if songIsChoosed{
-            player.play()
+            musicPlayer.play()
         }
     }
-    // Pause Music button
+    // Pause Music button.
     @IBAction func pauseButton(_ sender: UIButton) {
         if songIsChoosed{
-            player.pause()
+            musicPlayer.pause()
         }
         
     }
-    // Volume slider
+    // Volume slider.
     @IBAction func sliderButton(_ sender: UISlider) {
-        if songIsChoosed{
-            player.volume = sliderOutlet.value
+        // Match the volume with the slider outlet.
+        if songIsChoosed {
+            musicPlayer.volume = sliderOutlet.value
         }
+    }
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        // Skip to the next item in the queue.
+        if songIsChoosed {
+            musicPlayer.advanceToNextItem()
+        }
+        // If the queue is empty requeue songs in the array.
+        if musicPlayer.items().count == 0 {
+            queueMusic()
+        }
+    }
+    
+    
+    @IBAction func prevButton(_ sender: UIButton) {
     }
     
     /*************************************************************
@@ -99,24 +115,40 @@ class MusicViewController: UIViewController {
         
         super.viewDidLoad()
         
+        // Get the persistent login status.
         if let logged = UserDefaults.standard.value(forKey: identifiers.loginPersistence) {
             isLoggedIn = (logged as! Bool)
         } else {
             isLoggedIn = false
         }
         
+        // If the user is not logged in go to the login VC.
         if !isLoggedIn! {
-
             let viewController = self.storyboard?.instantiateViewController(withIdentifier: identifiers.loginViewController)
             self.present(viewController!, animated: true, completion: nil)
         }
         
+        // Load the music on startup.
+        queueMusic()
         
-        
-        
+        // When song ends go to the next.
+        musicPlayer.actionAtItemEnd = .advance
     }
     
-    
+    /*************************************************************
+     *                                                           *
+     *                         Music queueing                    *
+     *                                                           *
+     *************************************************************/
+    /// Load the songs array into the queue.
+    func queueMusic() {
+        for each in songs {
+            let songPath = Bundle.main.path(forResource: each, ofType: "mp3")
+            let url = URL(fileURLWithPath: songPath!)
+            
+            musicPlayer.insert(AVPlayerItem(url: url), after: nil)
+        }
+    }
     
     
     /*************************************************************
@@ -140,38 +172,6 @@ class MusicViewController: UIViewController {
     
 }
 
-/*************************************************************
- *                                                           *
- *                         Music Player                      *
- *                                                           *
- *************************************************************/
-extension MusicViewController : AVAudioPlayerDelegate {
-    
-    func playMusic(SongName name: String,Index index: Int) {
-        let songPath = Bundle.main.path(forResource: name, ofType: "mp3")
-        
-        do{
-            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: songPath!))
-            songIsChoosed = true
-            currentlyPlaying = index
-            player.play()
-        }catch {
-            showError(Title: "Error!", Message: "There was an error try again")
-        }
-        
-    }
-    
-    public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        
-        let nextInQueue = (currentlyPlaying + 1) % songs.count
-        print("NextInQueue : \(nextInQueue)")
-        let songName = songs[nextInQueue]
-        
-        playMusic(SongName: songName,Index: nextInQueue)
-        
-    }
-    
-}
 
 
 /*************************************************************
@@ -182,10 +182,30 @@ extension MusicViewController : AVAudioPlayerDelegate {
 extension MusicViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if let cell = tableView.cellForRow(at: indexPath){
-            
+            // Get the song name from the tapped cell
             if let songName = cell.textLabel?.text {
-                playMusic(SongName: songName, Index: indexPath.row)
+                
+                // Get the path for the song
+                let songPath = Bundle.main.path(forResource: songName, ofType: "mp3")
+                // Construct a url with the path
+                let url = URL(fileURLWithPath: songPath!)
+                
+                
+                // Prevent queueing the same song multiple times
+                if AVPlayerItem(url: url) === musicPlayer.currentItem{
+                    
+                } else {
+                    // Insert the tapped song after the current and advance to play it.
+                    musicPlayer.insert(AVPlayerItem(url: url) , after: musicPlayer.currentItem)
+                    musicPlayer.advanceToNextItem()
+                }
+                
+                // Play the currently selected song
+                musicPlayer.play()
+                songIsChoosed = true
             }
         }
     }
@@ -200,7 +220,7 @@ extension MusicViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: identifiers.cell)
         
         cell.textLabel?.text = songs[indexPath.row]
         
