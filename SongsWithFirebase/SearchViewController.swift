@@ -345,9 +345,12 @@ extension SearchViewController: UITableViewDelegate{
             // Get the url from the tapped cell.
             let cellUrl = Results[indexPath.row].storeURL
             
-            let modifiedCellUrl = cellUrl.replacingOccurrences(of: "?uo=4", with: "?ign-mpt=uo%3D4")
+            // The Url doesn't work on simulator but works fine in desktop safari so this shouldn't be needed.
+            //var modifiedCellUrl = cellUrl.replacingOccurrences(of: "?uo=4", with: "")
             
-            let url = URL(string: modifiedCellUrl)
+            
+            
+            let url = URL(string: cellUrl)
             
             print("URL : \(url)")
             
