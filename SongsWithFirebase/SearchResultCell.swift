@@ -10,30 +10,18 @@ import UIKit
 
 class SearchResultCell: UITableViewCell {
 
-    /*************************************************************
-     *                                                           *
-     *                         Outlets                           *
-     *                                                           *
-     *************************************************************/
+   // MARK: - Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var artworkImageView: UIImageView!
     
     
-    /*************************************************************
-     *                                                           *
-     *                         Variables                         *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Variables
     var downloadTask: URLSessionDownloadTask?
     
 
 
-    /*************************************************************
-     *                                                           *
-     *                        Configure method                   *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Update Method
     /// Given a result sets the labels and images to the content of the data
     ///
     /// - Parameter searchResult: Data to display in the cell.
@@ -76,11 +64,7 @@ class SearchResultCell: UITableViewCell {
     }
     
     
-    /*************************************************************
-     *                                                           *
-     *                        Activity Life Cycle                *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Cell Life Cycle
     override func prepareForReuse() {
         super.prepareForReuse()
         

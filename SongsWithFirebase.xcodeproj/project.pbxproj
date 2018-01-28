@@ -25,7 +25,6 @@
 		84EFCE511E984640001E3E3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE4F1E984640001E3E3B /* Main.storyboard */; };
 		84EFCE531E984640001E3E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE521E984640001E3E3B /* Assets.xcassets */; };
 		84EFCE561E984640001E3E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE541E984640001E3E3B /* LaunchScreen.storyboard */; };
-		84EFCE5E1E984BC1001E3E3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84EFCE5D1E984BC1001E3E3B /* GoogleService-Info.plist */; };
 		84F59F131F1C0D0A0006AC31 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59F0C1F1C0D0A0006AC31 /* ImageViewExtension.swift */; };
 		84F59F141F1C0D0A0006AC31 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F59F0D1F1C0D0A0006AC31 /* LoadingCell.xib */; };
 		84F59F151F1C0D0A0006AC31 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F59F0E1F1C0D0A0006AC31 /* NothingFoundCell.xib */; };
@@ -57,7 +56,6 @@
 		84EFCE521E984640001E3E3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84EFCE551E984640001E3E3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EFCE571E984640001E3E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84EFCE5D1E984BC1001E3E3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84F59F0C1F1C0D0A0006AC31 /* ImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		84F59F0D1F1C0D0A0006AC31 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		84F59F0E1F1C0D0A0006AC31 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				84EFCE521E984640001E3E3B /* Assets.xcassets */,
 				84EFCE541E984640001E3E3B /* LaunchScreen.storyboard */,
 				84EFCE571E984640001E3E3B /* Info.plist */,
-				84EFCE5D1E984BC1001E3E3B /* GoogleService-Info.plist */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -218,12 +215,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = ahmednader;
 				TargetAttributes = {
 					84EFCE471E984640001E3E3B = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 3TVP64ZUPA;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -257,7 +255,6 @@
 				84AB35141E986B4100A85A0E /* RumorHasIt.mp3 in Resources */,
 				84AB35121E986B4100A85A0E /* Hello.mp3 in Resources */,
 				84AB35171E986B4100A85A0E /* RiverLea.mp3 in Resources */,
-				84EFCE5E1E984BC1001E3E3B /* GoogleService-Info.plist in Resources */,
 				84AB35131E986B4100A85A0E /* Skyfall.mp3 in Resources */,
 				84F59F151F1C0D0A0006AC31 /* NothingFoundCell.xib in Resources */,
 				84AB35151E986B4100A85A0E /* TurningTables.mp3 in Resources */,
@@ -368,7 +365,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -376,7 +375,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -417,7 +420,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -425,7 +430,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -460,7 +469,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednader.SongsWithFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -474,7 +484,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednader.SongsWithFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

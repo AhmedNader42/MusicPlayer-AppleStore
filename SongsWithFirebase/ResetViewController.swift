@@ -13,21 +13,13 @@ import Firebase
 class ResetViewController : UIViewController
 {
     
-    /*************************************************************
-     *                                                           *
-     *                         Outlets                           *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Outlets
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet weak var spinner          : UIActivityIndicatorView!
     @IBOutlet weak var resetButton      : UIButton!
     
     
-    /*************************************************************
-     *                                                           *
-     *                         IBAction                          *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Actions
     @IBAction func resetButton(_ sender: UIButton) {
         
         // Start the spinner to indicate loading and disable the button.
@@ -85,11 +77,7 @@ class ResetViewController : UIViewController
         }
     }
     
-    /*************************************************************
-     *                                                           *
-     *                         Error                             *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Alert
     /// Shows an error popup with a given message and title
     ///
     /// - Parameters:
@@ -104,11 +92,7 @@ class ResetViewController : UIViewController
 }
 
 
-/*************************************************************
- *                                                           *
- *                         Keyboard                          *
- *                                                           *
- *************************************************************/
+// MARK: - Keyboard Dismiss
 extension ResetViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

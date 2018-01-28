@@ -12,11 +12,7 @@ import Firebase
 
 class LoginViewController: UIViewController
 {
-    /*************************************************************
-     *                                                           *
-     *                         Outlets                           *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Outlets
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField   : UITextField!
     @IBOutlet weak var spinner          : UIActivityIndicatorView!
@@ -24,21 +20,13 @@ class LoginViewController: UIViewController
     
 
     
-    /*************************************************************
-     *                                                           *
-     *                         Identifiers                       *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Identifiers
     struct identifiers {
         static let musicViewController = "MusicViewController"
         static let loginPersistence    = "login"
     }
     
-    /*************************************************************
-     *                                                           *
-     *                         IBAction                          *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Actions
     @IBAction func loginButton(_ sender: UIButton) {
         
         // Start animating the spinner to indicate loading and disable the button.
@@ -95,11 +83,7 @@ class LoginViewController: UIViewController
         
         
     }
-    /*************************************************************
-     *                                                           *
-     *                         Error                             *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Error Alert
     /// Shows an error popup with a given message and title
     ///
     /// - Parameters:
@@ -113,11 +97,7 @@ class LoginViewController: UIViewController
     }
 }
 
-/*************************************************************
- *                                                           *
- *                         Keyboard                          *
- *                                                           *
- *************************************************************/
+// MARK: - Keyboard dismiss
 extension LoginViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

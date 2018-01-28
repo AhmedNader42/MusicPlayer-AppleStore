@@ -12,21 +12,13 @@ import Firebase
 
 class SignUpViewController: UIViewController
 {
-    /*************************************************************
-     *                                                           *
-     *                         Outlets                           *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Outlets
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet weak var spinner          : UIActivityIndicatorView!
     @IBOutlet weak var signupButton      : UIButton!
     
-    /*************************************************************
-     *                                                           *
-     *                         Identifiers                       *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Identifiers
     struct identifiers {
         static let musicViewController = "MusicViewController"
         static let loginPersistence    = "login"
@@ -34,11 +26,7 @@ class SignUpViewController: UIViewController
     
     
     
-    /*************************************************************
-     *                                                           *
-     *                         IBAction                          *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Actions
     @IBAction func signupButton(_ sender: UIButton) {
         
         // Start animating the spinner and disable the button.
@@ -93,11 +81,7 @@ class SignUpViewController: UIViewController
             }
         }
     }
-    /*************************************************************
-     *                                                           *
-     *                         Error                             *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Alert
     /// Shows an error popup with a given message and title
     ///
     /// - Parameters:
@@ -115,11 +99,7 @@ class SignUpViewController: UIViewController
 
 
 
-/*************************************************************
- *                                                           *
- *                         Keyboard                          *
- *                                                           *
- *************************************************************/
+// MARK: - Keyboard Dismiss
 extension SignUpViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

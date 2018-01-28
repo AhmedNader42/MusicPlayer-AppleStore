@@ -14,39 +14,23 @@ import AVFoundation
 class MusicViewController: UIViewController {
     
     
-    /*************************************************************
-     *                                                           *
-     *                       Outlets                             *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Outlets
     @IBOutlet weak var sliderOutlet: UISlider!
     
-    /*************************************************************
-     *                                                           *
-     *                       Variables                           *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Variables
     var musicPlayer = AVQueuePlayer()
     var songIsChoosed = false
     let songs = ["RollingInTheDeep","Hello","Skyfall","RumorHasIt","TurningTables","SetFireToTheRain","RiverLea","MillionYearsAgo","WaterAndAFlame"]
     var isLoggedIn : Bool?
     
-    /*************************************************************
-     *                                                           *
-     *                       Identifiers                         *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Identifiers
     struct identifiers {
         static let loginViewController = "LoginViewController"
         static let loginPersistence    = "login"
         static let cell                = "Cell"
     }
     
-    /*************************************************************
-     *                                                           *
-     *                        IBAction                           *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Actions
     @IBAction func logoutButton(_ sender: UIBarButtonItem) {
         // Make sure current user exists.
         if FIRAuth.auth()?.currentUser != nil{
@@ -106,11 +90,7 @@ class MusicViewController: UIViewController {
     @IBAction func prevButton(_ sender: UIButton) {
     }
     
-    /*************************************************************
-     *                                                           *
-     *                        Activity Life Cycle                *
-     *                                                           *
-     *************************************************************/
+    // MARK: - VC Life Cycle
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -135,11 +115,7 @@ class MusicViewController: UIViewController {
         musicPlayer.actionAtItemEnd = .advance
     }
     
-    /*************************************************************
-     *                                                           *
-     *                         Music queueing                    *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Music Queuing
     /// Load the songs array into the queue.
     func queueMusic() {
         for each in songs {
@@ -151,11 +127,7 @@ class MusicViewController: UIViewController {
     }
     
     
-    /*************************************************************
-     *                                                           *
-     *                         Error                             *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Alert
     /// Shows an error popup with a given message and title
     ///
     /// - Parameters:
@@ -174,11 +146,7 @@ class MusicViewController: UIViewController {
 
 
 
-/*************************************************************
- *                                                           *
- *                       TableView methods                   *
- *                                                           *
- *************************************************************/
+// MARK: - TableView
 extension MusicViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -233,11 +201,7 @@ extension MusicViewController: UITableViewDataSource {
 
 
 
-/*************************************************************
- *                                                           *
- *                         Keyboard                          *
- *                                                           *
- *************************************************************/
+// MARK: - Keyboard Dismiss
 extension MusicViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

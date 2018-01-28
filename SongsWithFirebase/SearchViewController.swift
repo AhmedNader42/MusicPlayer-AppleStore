@@ -10,41 +10,25 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    /*************************************************************
-     *                                                           *
-     *                       Outlets                             *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Outlets
     @IBOutlet weak var searchBar:UISearchBar!
     @IBOutlet weak var tableView:UITableView!
     
     
-    /*************************************************************
-     *                                                           *
-     *                      Variables                            *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Variables
     var Results: [Result] = []
     var didSearch         = false
     var isDownloading     = false
     var dataTask          : URLSessionDataTask?
     
-    /*************************************************************
-     *                                                           *
-     *                        Identifiers                        *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Identifiers
     struct identifiers {
         static let searchResultCell = "SearchResultCell"
         static let nothingFoundCell = "NothingFoundCell"
         static let loadingCell      = "LoadingCell"
     }
     
-    /*************************************************************
-     *                                                           *
-     *                     Activity LifeCycle                    *
-     *                                                           *
-     *************************************************************/
+    // MARK: - VC Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,11 +49,7 @@ class SearchViewController: UIViewController {
         searchBar.becomeFirstResponder()
     }
     
-    /*************************************************************
-     *                                                           *
-     *                           Error                           *
-     *                                                           *
-     *************************************************************/
+    // MARK: - Alert
     /// Shows an error popup with a given message and title
     ///
     /// - Parameters:
@@ -84,11 +64,7 @@ class SearchViewController: UIViewController {
 }
 
 
-/*************************************************************
- *                                                           *
- *                Extension for searchbar                    *
- *                                                           *
- *************************************************************/
+// MARK: - SearchBar Delegate
 extension SearchViewController: UISearchBarDelegate{
     
     // Perform search when the search button is clicked.
@@ -125,7 +101,7 @@ extension SearchViewController: UISearchBarDelegate{
                 data,response,error in
                 
                 // Check for error
-                if let error = error as? NSError, error.code == -999 {
+                if let error = error as NSError?, error.code == -999 {
                     return
                 }
                 // check the server response code.
@@ -159,11 +135,7 @@ extension SearchViewController: UISearchBarDelegate{
 }
 
 
-/*************************************************************
- *                                                           *
- *                 The Networking methods                    *
- *                                                           *
- *************************************************************/
+// MARK: - Networking methods
 /// Constructs a valid iTunes URL from search text
 ///
 /// - Parameter searchText: The text that will be searched for.
@@ -183,11 +155,7 @@ func iTunesURL(SearchFor searchText:String) -> URL{
 
 
 
-/*************************************************************
- *                                                           *
- *                 The JSON Parsing methods                  *
- *                                                           *
- *************************************************************/
+// MARK: - Json Parsing
 /// Parse JSON data into a dictionary.
 ///
 /// - Parameter json: JSON data from the request.
@@ -253,11 +221,7 @@ func parseDict(dictionary: [String:Any]) -> [Result] {
     return searchResults
 }
 
-/*************************************************************
- *                                                           *
- *                 wrapper and kind parsing                  *
- *                                                           *
- *************************************************************/
+// MARK: - Wrapper/Kind Parsing
 /// Parses a dictionary as a track and puts it in a Result.
 ///
 /// - Parameter dictionary: Dictionary of a resulting dictionary with wrapperType track.
@@ -331,11 +295,7 @@ func parseEbook(ebook dictionary: [String:Any]) -> Result{
 
 
 
-/*************************************************************
- *                                                           *
- *    Extensions for the protocols of UITableView            *
- *                                                           *
- *************************************************************/
+// MARK: - TableView
 extension SearchViewController: UITableViewDelegate{
     
     //When selecting a cell search the web for the storeUrl
@@ -352,7 +312,7 @@ extension SearchViewController: UITableViewDelegate{
             
             let url = URL(string: cellUrl)
             
-            print("URL : \(url)")
+            print("URL : \(String(describing: url))")
             
             // Check if any installed app can open the url.
             if UIApplication.shared.canOpenURL(url!) {
